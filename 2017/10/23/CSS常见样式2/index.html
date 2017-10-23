@@ -1,0 +1,130 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="知识海洋无边境 穷尽一生愿遨游"><title>CSS 常见样式（二） | Motco</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/7.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">CSS 常见样式（二）</h1><a id="logo" href="/.">Motco</a><p class="description">你不经意间流露的本性才是你的原貌</p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa icon-rss"> 订阅</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">CSS 常见样式（二）</h1><div class="post-meta">Oct 23, 2017<span> | </span><span class="category"><a href="/categories/Front-End/">Front-End</a></span><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> 阅读</span></span></div><a data-disqus-identifier="2017/10/23/CSS常见样式2/" href="/2017/10/23/CSS常见样式2/#disqus_thread" class="disqus-comment-count"></a><div class="post-content"><h4 id="1-text-align的特性"><a href="#1-text-align的特性" class="headerlink" title="1. text-align的特性"></a>1. <code>text-align</code>的特性</h4><ul>
+<li><code>text-align</code>常用于盒子里的文字、图片等内容居左、居中或局右<ul>
+<li><code>text-align: center;</code>使父容器下元素居中，包括一般行内元素，行内块级元素和块级元素的内文本等</li>
+<li><code>text-align: justify;</code>可以使文本两端对齐</li>
+<li>其他属性<code>left</code>，<code>right</code>，</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-盒模型"><a href="#2-盒模型" class="headerlink" title="2. 盒模型"></a>2. 盒模型</h4><ul>
+<li><p>CSS盒模型是网页布局的基础，每一个HTML元素都可看作被矩形框所包裹，W3C标准盒模型如下：<br><img src="https://www.w3.org/TR/CSS22/images/boxdim.png" alt="w3c盒模型"></p>
+<ul>
+<li>IE盒模型中<code>width</code>和<code>height</code>的尺寸包含<code>content</code>、<code>padding</code>和<code>border</code></li>
+<li>w3c盒模型中<code>width</code>和<code>height</code>的尺寸仅含<code>content</code>，不包括<code>padding</code>和<code>border</code></li>
+</ul>
+</li>
+<li><p><code>box-sizing: border-box;</code>的特性：使<code>width</code>和<code>height</code>的尺寸包含<code>content</code>、<code>padding</code>和<code>border</code>，即使浏览器渲染采用IE盒模型的效果</p>
+</li>
+</ul>
+<h4 id="3-line-height的特性，"><a href="#3-line-height的特性，" class="headerlink" title="3. line-height的特性，"></a>3. <code>line-height</code>的特性，</h4><ul>
+<li><p><code>line-height</code>用来控制行与行之间的垂直间距，按照值的不同，继承情况有所差别</p>
+<ul>
+<li><p>值为<code>&lt;number&gt;</code>，继承元素中的<code>line-height</code>会随着<code>font-size</code>作相应比例缩放</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">16px</span>;</div><div class="line">  <span class="attribute">line-height</span>: <span class="number">2</span>;       <span class="comment">/* 计算的值为16px * 2 = 32px */</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">h1</span> &#123;<span class="attribute">font-size</span>: <span class="number">32px</span>; &#125;  <span class="comment">/* 继承的值为32px * 2 = 64px */</span></div><div class="line"><span class="selector-tag">p</span> &#123;<span class="attribute">font-size</span>: <span class="number">12px</span>; &#125;   <span class="comment">/* 继承的值为12px * 2 = 24px */</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>值为<code>normal</code>，同上，桌面浏览器的值约为1.2，取决于元素的<code>font-family</code></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">16px</span>;</div><div class="line">  <span class="attribute">line-height</span>: normal;  <span class="comment">/* 计算的值约为16px * 1.2 = 14.4px */</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">h1</span> &#123;<span class="attribute">font-size</span>: <span class="number">32px</span>; &#125;  <span class="comment">/* 继承的值约为32px * 1.2 = 38.4px */</span></div><div class="line"><span class="selector-tag">p</span> &#123;<span class="attribute">font-size</span>: <span class="number">12px</span>; &#125;   <span class="comment">/* 继承的值约为16px * 1.2 = 14.4px */</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>值为<code>&lt;percentage&gt;</code>，父容器中的<code>font-size</code>的值和<code>line-height</code>的百分比的计算值会被层叠下去的元素所继承，不会作出相应缩放</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">16px</span>;</div><div class="line">  <span class="attribute">line-height</span>: <span class="number">200%</span>;    <span class="comment">/* 计算的值为16px * 200% = 32px */</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">h1</span> &#123;<span class="attribute">font-size</span>: <span class="number">32px</span>; &#125;  <span class="comment">/* 继承的值为16px * 200% = 32px */</span></div><div class="line"><span class="selector-tag">p</span> &#123;<span class="attribute">font-size</span>: <span class="number">12px</span>; &#125;   <span class="comment">/* 继承的值为16px * 200% = 32px */</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>值为<code>&lt;length&gt;</code>，同上，长度值会被层叠下去的元素所继承，不会作出相应缩放</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">16px</span>;</div><div class="line">  <span class="attribute">line-height</span>: <span class="number">20px</span>;    <span class="comment">/* 指定值为20px */</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">h1</span> &#123;<span class="attribute">font-size</span>: <span class="number">32px</span>; &#125;  <span class="comment">/* 继承的值为20px */</span></div><div class="line"><span class="selector-tag">p</span> &#123;<span class="attribute">font-size</span>: <span class="number">12px</span>; &#125;   <span class="comment">/* 继承的值为20px */</span></div></pre></td></tr></table></figure>
+<p><em>refer to <a href="http://www.cnblogs.com/fengzheng126/archive/2012/05/18/2507632.html" target="_blank" rel="external">深入了解css的行高Line Height属性 | cnblogs</a></em></p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="4-inline-block的特性"><a href="#4-inline-block的特性" class="headerlink" title="4. inline-block的特性"></a>4. <code>inline-block</code>的特性</h4><ul>
+<li><p><code>display：inline-block</code>属性和行内元素类似，不过可以设置<code>width</code>和<code>height</code>；默认情况下，<code>inline-block</code>元素间换行排列或存在空格都会导致实际呈现时出现间距</p>
+<p>消除间距的方法：</p>
+<ul>
+<li><p>去除<code>inline-block</code>元素间空格</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">/* 无空格，代码可读性差 */</div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"count"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>123<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>456<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">/* 无空格 */</div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"count"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>123<span class="tag">&lt;/<span class="name">span</span></span></div><div class="line"><span class="tag">  &gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>456<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">/* 无空格，借助HTML注释 */</div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"count"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>123<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="comment">&lt;!--</span></div><div class="line"><span class="comment">  --&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>456<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>使用<code>font-size</code>，父级元素设置<code>font-size: 0;</code>，而<code>inline-block</code>设置字体所需的字体大小<code>font-size: 16px</code></p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="selector-tag">div</span> class=<span class="string">"count"</span>&gt;</div><div class="line">  &lt;span&gt;<span class="number">123</span>&lt;/span&gt;</div><div class="line">  &lt;span&gt;<span class="number">456</span>&lt;/span&gt;</div><div class="line">&lt;/div&gt;</div><div class="line"></div><div class="line"><span class="comment">/* CSS样式 */</span></div><div class="line"><span class="selector-class">.count</span> &#123;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.count</span> <span class="selector-tag">span</span> &#123;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">16px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>使用<code>word-spacing</code>，父级元素设置为负值<code>word-spacing: -6px;</code>，而<code>inline-block</code>设为0，不同浏览器spacing可能不一致</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="selector-tag">div</span> class=<span class="string">"count"</span>&gt;</div><div class="line">  &lt;span&gt;<span class="number">123</span>&lt;/span&gt;</div><div class="line">  &lt;span&gt;<span class="number">456</span>&lt;/span&gt;</div><div class="line">&lt;/div&gt;</div><div class="line"></div><div class="line"><span class="comment">/* CSS样式 */</span></div><div class="line"><span class="selector-class">.count</span> &#123;</div><div class="line">  <span class="attribute">word-spacing</span>: -<span class="number">6px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.count</span> <span class="selector-tag">span</span> &#123;</div><div class="line">  <span class="attribute">word-spacing</span>: <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>使用<code>letter-spacing</code>，用法与<code>word-spacing</code>类似</p>
+<p><em>refer to <a href="http://www.zhangxinxu.com/wordpress/2012/04/inline-block-space-remove-%E5%8E%BB%E9%99%A4%E9%97%B4%E8%B7%9D/" target="_blank" rel="external">去除inline-block元素间间距的N种方法 | zhangxinxu</a></em></p>
+</li>
+</ul>
+</li>
+<li><p><code>vertical-align</code>的特性，使父容器下行内元素垂直方向对齐，包括<code>inline</code>和<code>inline-block</code>元素</p>
+<ul>
+<li>常用的值有：<code>top</code>，<code>bottom</code>，<code>middle</code>，默认值为<code>baseline</code></li>
+<li><p>使用<code>vertical-align: top;</code>可使行内元素垂直方向沿顶部对齐</p>
+<p><em>refer to <a href="https://segmentfault.com/a/1190000002668492" target="_blank" rel="external">[翻译]关于Vertical-Align你需要知道的事情 | segmentfault</a></em></p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="5-CSS-sprites“精灵图”"><a href="#5-CSS-sprites“精灵图”" class="headerlink" title="5. CSS sprites“精灵图”"></a>5. <code>CSS sprites</code>“精灵图”</h4><ul>
+<li>具有许多图像的网页需要很长时间才能加载完成并生成多个服务器请求，而”精灵图”的作用就是将一些小的图片整合到一个图片文件中，从而减少服务器请求<ul>
+<li>通过<code>backgroud-image</code>属性在元素背景中插入整合后的图片</li>
+<li>通过<code>background-repeat</code>属性设置是否无限平铺</li>
+<li>通过<code>background-positon</code>属性设置图片展示的位置</li>
+</ul>
+</li>
+</ul>
+<h4 id="6-元素隐藏的几种方式"><a href="#6-元素隐藏的几种方式" class="headerlink" title="6. 元素隐藏的几种方式"></a>6. 元素隐藏的几种方式</h4><ul>
+<li><p><code>display: none;</code></p>
+<ul>
+<li>完全意义的隐藏，不生成盒模型，不占据布局空间，包括子元素也不会在页面呈现出来</li>
+</ul>
+</li>
+<li><p><code>opacity: 0;</code></p>
+<ul>
+<li>通过设置透明度达到视觉上不呈现的效果，占据布局空间，能够响应交互操作</li>
+<li>可使用<code>transition</code>或<code>animate</code>达到淡入淡出的动画效果</li>
+</ul>
+</li>
+<li><p><code>visibility: hidden;</code></p>
+<ul>
+<li>与<code>opacity: 0;</code>类似，但不会响应交互操作</li>
+<li>设置子元素<code>visibility: visible;</code>时可显示子元素</li>
+</ul>
+</li>
+<li><p><code>position: absolute;</code>属性</p>
+<ul>
+<li>通过绝对定位，将元素移出可见区，不占据布局空间，</li>
+<li>可设置很大的<code>left</code>负值</li>
+</ul>
+</li>
+<li><p>其他</p>
+<ul>
+<li><code>transform: scale(0);</code>缩小元素尺寸</li>
+<li><code>height: 0; overflow: hidden;</code>溢出隐藏，不占据空间</li>
+</ul>
+<p><em>refer to <a href="http://www.zhangxinxu.com/wordpress/2012/02/css-overflow-hidden-visibility-hidden-disabled-use/" target="_blank" rel="external">CSS元素隐藏 | zhangxinxu</a>，<a href="http://www.htmleaf.com/ziliaoku/qianduanjiaocheng/201502271431.html" target="_blank" rel="external">使用CSS隐藏HTML元素的4种常用方法 | htmleaf</a></em></p>
+</li>
+</ul>
+</div><script type="text/javascript" src="/js/share.js?v=0.0.0" async></script><a data-url="https://motco.github.io/2017/10/23/CSS常见样式2/" data-id="cj93iaurd0001bs8g507yu4dv" data-qrcode="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLklEQVR42u3aQW7DMAwF0dz/0u62QGtlPqkEMDVeGa1r62nBkhRfL3xdv669z/99hn8lvmTIkPFYxrW81suqwdbvX//8doNkyJBxAGMdCsl9LdSuN4usTYYMGTLu7tefJIsjQVyGDBky+gGXw9IEUYYMGTJqRezeAErSyo/U4jJkyHgggzfLvn//kfMNGTJkPIpxhRcvaMlva0H2n3fKkCFjNIMHOLKU9L4TcGXIkHEOgxSHnWK1VtbGIx0yZMgYzUib73G61mjVpS0/GTJkTGV0SlNSiNYOEtJkVIYMGTL6oxLpkeQ6EbztGsqQIWMogzTOdo0+kDGL9K+Cj8mQIeOxjFqYS8vdWmuP/OTN/w0ZMmSMY5BSlodF3jjjYRe122TIkDGU0Z/XSFO92hveDITJkCHjAEZt5KvW9OfBujgzIkOGjHEMUqbWmmjpMWfaerutxWXIkDGI0Q+CZOm18J1uqAwZMmYzOkvk5Wgt4AZltgwZMkYzghY8KFN5kpduVpwUypAhYxBj18FAbVxjV3IpQ4aMExi86c+jXBpYa2+WIUPGOQzeXKsVvWTptX6aDBkyZjOu8OIJYqfRn7bnZMiQMZuRBjuO6Ze76YGBDBkyZjNIiOy34XgITp+RIUPGOQwe+PgYBC+J+4mjDBkyZOwKjuRJvk2oeydDhowjGSkv/SI5ztwQcGXIkPFABili08PO2kBGcZtkyJAxmpEOOnRSydpIRxq4ZciQMYjxA10fA/EC123YAAAAAElFTkSuQmCC" class="article-share-link">分享</a><div class="tags"><a href="/tags/text-align/">text-align</a><a href="/tags/line-height/">line-height</a><a href="/tags/inline-bllock/">inline-bllock</a><a href="/tags/元素隐藏/">元素隐藏</a></div><div class="post-nav"><a href="/2017/10/23/CSS浮动与定位/" class="pre">CSS 浮动与定位</a><a href="/2017/10/23/CSS常见样式1/" class="next">CSS 常见样式（一）</a></div><div id="disqus_thread"><div class="btn_click_load"><button class="disqus_click_btn">阅读评论 「请确保 disqus.com 可以正常加载」</button></div><script>var disqus_shortname = 'Motco';
+var disqus_identifier = '2017/10/23/CSS常见样式2/';
+var disqus_title = 'CSS 常见样式（二）';
+var disqus_url = 'https://motco.github.io/2017/10/23/CSS常见样式2/';
+$('.btn_click_load').click(function() {
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+  $('.btn_click_load').css('display','none');
+});
+$.ajax({
+  url: 'https://disqus.com/next/config.json',
+  timeout: 3000,
+  type: 'GET',
+  success: (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    $('.btn_click_load').css('display','none');
+  })(),
+  error: function() {
+    $('.btn_click_load').css('display','block');
+  }
+});</script><script id="dsq-count-scr" src="//Motco.disqus.com/count.js" async></script></div></div></div></div><div class="pure-u-1 pure-u-md-1-4"><div id="sidebar"><div class="widget"><form action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" class="search-form"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="https://motco.github.io"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Front-End/">Front-End</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/line-height/" style="font-size: 15px;">line-height</a> <a href="/tags/form标签/" style="font-size: 15px;">form标签</a> <a href="/tags/css编写规范/" style="font-size: 15px;">css编写规范</a> <a href="/tags/css引入方式/" style="font-size: 15px;">css引入方式</a> <a href="/tags/css继承/" style="font-size: 15px;">css继承</a> <a href="/tags/行内元素/" style="font-size: 15px;">行内元素</a> <a href="/tags/块级元素/" style="font-size: 15px;">块级元素</a> <a href="/tags/text-align/" style="font-size: 15px;">text-align</a> <a href="/tags/DevTools/" style="font-size: 15px;">DevTools</a> <a href="/tags/inline-bllock/" style="font-size: 15px;">inline-bllock</a> <a href="/tags/元素隐藏/" style="font-size: 15px;">元素隐藏</a> <a href="/tags/选择器/" style="font-size: 15px;">选择器</a> <a href="/tags/优先级/" style="font-size: 15px;">优先级</a> <a href="/tags/float/" style="font-size: 15px;">float</a> <a href="/tags/css定位/" style="font-size: 15px;">css定位</a> <a href="/tags/BFC/" style="font-size: 15px;">BFC</a> <a href="/tags/外边距合并/" style="font-size: 15px;">外边距合并</a> <a href="/tags/css-hack/" style="font-size: 15px;">css-hack</a> <a href="/tags/css-tools/" style="font-size: 15px;">css-tools</a> <a href="/tags/学习资源/" style="font-size: 15px;">学习资源</a> <a href="/tags/cmd/" style="font-size: 15px;">cmd</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/10/23/浏览器兼容/">浏览器兼容</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/23/CSS浮动与定位/">CSS 浮动与定位</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/23/CSS常见样式2/">CSS 常见样式（二）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/23/CSS常见样式1/">CSS 常见样式（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/23/CSS编写规范/">CSS 编写规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/24/IT学习资源/">IT学习资源</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/24/Linux-command/">Linux command</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/24/form标签/">form 标签</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/24/CSS选择器/">CSS 选择器</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/24/CSS基础/">CSS 基础</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-comment-o"> 最近评论</i></div><script type="text/javascript" src="//Motco.disqus.com/recent_comments_widget.js?num_items=5&amp;hide_avatars=1&amp;avatar_size=32&amp;excerpt_length=20&amp;hide_mods=1"></script></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2017 <a href="/." rel="nofollow">Motco.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>

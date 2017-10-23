@@ -1,0 +1,182 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="知识海洋无边境 穷尽一生愿遨游"><title>CSS 常见样式（一） | Motco</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/7.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">CSS 常见样式（一）</h1><a id="logo" href="/.">Motco</a><p class="description">你不经意间流露的本性才是你的原貌</p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa icon-rss"> 订阅</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">CSS 常见样式（一）</h1><div class="post-meta">Oct 23, 2017<span> | </span><span class="category"><a href="/categories/Front-End/">Front-End</a></span><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> 阅读</span></span></div><a data-disqus-identifier="2017/10/23/CSS常见样式1/" href="/2017/10/23/CSS常见样式1/#disqus_thread" class="disqus-comment-count"></a><div class="post-content"><h4 id="1-行内元素与块级元素"><a href="#1-行内元素与块级元素" class="headerlink" title="1. 行内元素与块级元素"></a>1. 行内元素与块级元素</h4><ul>
+<li>HTML中的元素可分为两种类型：内联元素与块级元素，这些元素的类型是通过文档类型定义（DTD）来指明；还可以通过 <code>display: block</code> 或 <code>display:inline</code>来转换块级元素和内联元素</li>
+<li><p>行内元素(<code>inline element</code>)，又称内联元素</p>
+<ul>
+<li>一般行内元素只能包含文本和其他行内元素</li>
+<li>行内元素默认在一行，不会以新行开始</li>
+<li>宽度(width)、高度(height)、内边距(padding)和外边距(margin)都不可改变</li>
+<li><p>宽度默认是它的文字和图片的宽度，不可改变</p>
+<p>以|下|均|为|行|内|元|素<br>:–:|:–:|:–:|:–:|:–:|:–:|:–:|:–:<br><code>&lt;a&gt;</code> | <code>&lt;b&gt;</code> | <code>&lt;big&gt;</code> | <code>&lt;i&gt;</code> | <code>&lt;small&gt;</code> | <code>&lt;tt&gt;</code> | <code>&lt;abbr&gt;</code> | <code>&lt;acronym&gt;</code><br><code>&lt;cite&gt;</code> | <code>&lt;code&gt;</code> | <code>&lt;dfn&gt;</code> | <code>&lt;em&gt;</code> | <code>&lt;kbd&gt;</code> | <code>&lt;strong&gt;</code> | <code>&lt;samp&gt;</code> | <code>&lt;time&gt;</code><br><code>&lt;var&gt;</code> | <code>&lt;bdo&gt;</code> | <code>&lt;br&gt;</code> | <code>&lt;img&gt;</code> | <code>&lt;map&gt;</code> | <code>&lt;object&gt;</code> | <code>&lt;q&gt;</code> | <code>&lt;script&gt;</code><br><code>&lt;span&gt;</code> | <code>&lt;sub&gt;</code> | <code>&lt;sup&gt;</code> | <code>&lt;button&gt;</code> | <code>&lt;input&gt;</code> | <code>&lt;label&gt;</code> | <code>&lt;select&gt;</code> | <code>&lt;textarea&gt;</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>块级元素(<code>block element</code>)</p>
+<ul>
+<li>一般块级元素可以包含行内元素和其他块级元素</li>
+<li>默认情况下，块级元素会新起一行</li>
+<li>宽度，高度和内外边距都可控制</li>
+<li><p>宽度默认是它容器的100%，除非设定一个宽度</p>
+<p>语义|块级元素|块级元素|语义<br>:–:|:–:|:–:|:–:<br>联系方式信息 | <code>&lt;address&gt;</code> | <code>&lt;article&gt;</code> | 文章内容<br>伴随内容 | <code>&lt;aside&gt;</code> | <code>&lt;audio&gt;</code> | 音频播放<br>块引用  | <code>&lt;blockquote&gt;</code> | <code>&lt;canvas&gt;</code> | 绘制图形<br>定义列表中定义条目描述 | <code>&lt;dd&gt;</code> | <code>&lt;div&gt;</code> |文档分区<br>定义列表 |<code>&lt;dl&gt;</code> | <code>&lt;fieldset&gt;</code> | 表单元素分组<br>图文信息组标题 | <code>&lt;figcaption&gt;</code> |<code>&lt;figure&gt;</code> | 图文信息组<br>区段尾或页尾 | <code>&lt;footer&gt;</code> | <code>&lt;form&gt;</code> | 表单<br>标题级别 | <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code><br><code>&lt;h3&gt;</code>, <code>&lt;h4&gt;</code><br><code>&lt;h5&gt;</code>, <code>&lt;h6&gt;</code><br> | <code>&lt;header&gt;</code> | 区段头或页头<br>标题组 | <code>&lt;hgroup&gt;</code> | <code>&lt;hr&gt;</code> | 水平分割线<br>不支持脚本或禁用<br>脚本时显示的内容 | <code>&lt;noscript&gt;</code> | <code>&lt;ol&gt;</code> |有序列表<br>表单输出 | <code>&lt;output&gt;</code> | <code>&lt;p&gt;</code> | 段落<br>一个页面区段 | <code>&lt;section&gt;</code> | <code>&lt;table&gt;</code> | 表格<br>表脚注 | <code>&lt;tfoot&gt;</code> | <code>&lt;ul&gt;</code> | 无序列表<br>视频 | <code>&lt;video&gt;</code> | - | -</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-CSS继承"><a href="#2-CSS继承" class="headerlink" title="2. CSS继承"></a>2. CSS继承</h4><ul>
+<li><p><code>CSS</code> 的继承性，指的是应用在一个标签上的那些 <code>CSS</code> 属性被传到其子标签上。当一个元素的继承属性(inherited property)没有指定值时，则取父元素计算值(computed value)</p>
+<ul>
+<li><p>典型例子 <code>color</code> 属性 :</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">p</span> &#123; <span class="attribute">color</span>: green &#125;</div></pre></td></tr></table></figure>
+<p>HTML：</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p&gt;This <span class="built_in">paragraph</span> has &lt;em&gt;emphasized <span class="built_in">text</span>&lt;/em&gt; <span class="keyword">in</span> <span class="keyword">it</span>.&lt;/p&gt;</div></pre></td></tr></table></figure>
+<p>文本 <code>&quot;emphasized text&quot;</code> 将会呈现为绿色，因为 <code>em</code> 元素继承了 <code>p</code> 元素 <code>color</code> 属性的值</p>
+</li>
+<li><p>以下都是可继承属性：</p>
+<p><em>refer to <a href="https://stackoverflow.com/questions/5612302/which-css-properties-are-inherited" target="_blank" rel="external">Which CSS properties are inherited? | stackoverflow</a></em></p>
+<ul>
+<li>border-collapse</li>
+<li>border-spacing</li>
+<li>caption-side</li>
+<li>color</li>
+<li>cursor</li>
+<li>direction</li>
+<li>empty-cells</li>
+<li>font-family</li>
+<li>font-size</li>
+<li>font-style</li>
+<li>font-variant</li>
+<li>font-weight</li>
+<li>font-size-adjust</li>
+<li>font</li>
+<li>font-stretch</li>
+<li>letter-spacing</li>
+<li>line-height</li>
+<li>list-style-image</li>
+<li>list-style-position</li>
+<li>list-style</li>
+<li>list-style-type</li>
+<li>orphans</li>
+<li>quotes</li>
+<li>tab-size</li>
+<li>text-align</li>
+<li>text-align-last</li>
+<li>text-indent</li>
+<li>text-decoration-color</li>
+<li>text-justify</li>
+<li>text-shadow</li>
+<li>text-tranform</li>
+<li>visibility</li>
+<li>white-space</li>
+<li>widows</li>
+<li>word-break</li>
+<li>word-spacing</li>
+<li>word-wrap</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>非继承属性(reset property),当元素的一个非继承属性(reset property)没有指定值时，则取属性的初始值(initial value)</p>
+<ul>
+<li><p>典型例子如 <code>border</code> 属性：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">p</span> &#123; <span class="attribute">border</span>: medium solid &#125;</div></pre></td></tr></table></figure>
+<p>HTML：</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p&gt;This <span class="built_in">paragraph</span> has &lt;em&gt;emphasized <span class="built_in">text</span>&lt;/em&gt; <span class="keyword">in</span> <span class="keyword">it</span>.&lt;/p&gt;</div></pre></td></tr></table></figure>
+<p>文本 <code>&quot;emphasized text&quot;</code> 没有边框，因为<code>border-style</code>属性的初始值为 <code>none</code></p>
+</li>
+<li><p>以下都是非继承属性，大多与定位，浮动，盒模型相关：</p>
+<p><em>refer to <a href="https://segmentfault.com/q/1010000000269211" target="_blank" rel="external">CSS 哪些属性默认会继承, 哪些不会继承? | segmentfault</a></em></p>
+<ul>
+<li>border (border-color , border-style , border-width , border-spacing…)</li>
+<li>padding (padding-left , padding-right , padding-top , padding-bottom)</li>
+<li>margin (margin-left , margin-right , margin-top , margin-bottom)</li>
+<li>outline (outline-color , outline-style , outline-width)</li>
+<li>background (background-color , background-image , background-position…)</li>
+<li>height（min-height , max-height）</li>
+<li>width（min-width , max-width）</li>
+<li>clip</li>
+<li>display</li>
+<li>overflow</li>
+<li>position</li>
+<li>float</li>
+<li>z-index</li>
+<li>clear</li>
+<li>table-layout</li>
+<li>vertical-align</li>
+<li>unicode-bidi</li>
+<li>content</li>
+<li>text-decoration</li>
+<li>page-break-after (page-break-before)</li>
+<li>left (right , top , bottom)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-知识扩展"><a href="#3-知识扩展" class="headerlink" title="3. 知识扩展"></a>3. 知识扩展</h3><ul>
+<li><p>块级元素和行内元素水平居中实现方法</p>
+<ul>
+<li>块级元素水平居中：<code>margin:0 auto;</code></li>
+<li>行内元素水平居中：<code>text-align:center;</code></li>
+</ul>
+</li>
+<li><p>单行文本溢出加 <code>...</code> 如何实现?</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">white-space</span>: nowrap; <span class="comment">/* 超过宽度不换行 */</span></div><div class="line"><span class="attribute">overflow</span>: hidden; <span class="comment">/* 超过宽度字符隐藏 */</span></div><div class="line"><span class="attribute">text-overflow</span>: ellipsis; <span class="comment">/* 超过宽度字符隐藏后变成“...” */</span></div></pre></td></tr></table></figure>
+</li>
+<li><p><code>px</code>, <code>em</code>, <code>rem</code>有什么区别?</p>
+<ul>
+<li><code>px</code> 在缩放页面时无法调整那些使用它作为单位的字体、按钮等的大小</li>
+<li><code>em</code> 的值不是固定的，会继承父级元素的字体大小，代表倍数</li>
+<li><code>rem</code> 的值不是固定的，始终是基于根元素 <code>&lt;html&gt;</code> 的，也代表倍数</li>
+</ul>
+<p><em>refer to <a href="https://segmentfault.com/a/1190000005936910" target="_blank" rel="external">CSS：区别px、em、rem | segmentfault</a></em></p>
+</li>
+<li><p>字体设置</p>
+<ul>
+<li><code>font</code> - 简写属性，在一个声明中设置所有的字体属性</li>
+<li><code>font-family</code> - 设置字体系列</li>
+<li><code>font-size</code> - 设置字体的尺寸</li>
+<li><code>font-style</code> - 设置字体样式</li>
+<li><code>font-variant</code> - 以小型大写字体或者正常字体显示文本</li>
+<li><code>font-weight</code> - 设置字体的粗细</li>
+<li><code>line-height</code> - 设置行高（默认垂直居中性）</li>
+</ul>
+<p>示例</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span>&#123;</div><div class="line">  <span class="attribute">font</span>: <span class="number">12px</span>/<span class="number">1.5</span> tahoma,arial,<span class="string">'Hiragino Sans GB'</span>,<span class="string">'\5b8b\4f53'</span>,sans-serif;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li><code>12px/1.5</code>：设置字体12px，行高1.5倍</li>
+<li><code>tahoma,arial,&#39;Hiragino Sans GB&#39;,&#39;\5b8b\4f53&#39;,sans-serif</code><ul>
+<li>设置字体样式，若字体不存在，则按照先后顺序调用</li>
+<li>字体间有空格时要添加引号</li>
+<li><code>\5b8b\4f53</code>是字体的<code>unicode</code>编码格式，代表的是宋体</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div><script type="text/javascript" src="/js/share.js?v=0.0.0" async></script><a data-url="https://motco.github.io/2017/10/23/CSS常见样式1/" data-id="cj93iaur70000bs8g4v1gldck" data-qrcode="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLElEQVR42u3azU7EMAxF4Xn/ly5bEEw41w5IcU5WFeo0/bow8c/rhdfzae29//s9fJd4yZAh41jGs1zr16rB1s9f//3tB5IhQ8YFjHUoJFvWQu36Y5F3kyFDhgzCWG/Pw+t6XxkyZMjoB1wSLtMDqAwZMmT0AyhJL9fP4YfFbbm4DBkyDmTwYtn/X/9Jf0OGDBlHMZ5wdUpv60NeGtC//EqGDBmjGTzAkVdJrzsBV4YMGXcydoXXTum/NdIhQ4aMoQx+XKsV+jvtzKAtKkOGjGsYPFzyRLQ2bJEeRmXIkDGbQX5AUtY0aPLDKDnIypAh42YGT2s7TdDaaFpQEZQhQ8bhDFLq4tvwxiTHoFKdDBkyLmbwVLZ2HNz2UWTIkHEBozPokDYdeeIaDJnJkCFjNCM9FPJiWdpU2DwzIkOGjEEMfmhL25a1NmdaevvhaChDhoxxjF1JaatY1o6ZMmTImM0g5ft+2E1boWk7QYYMGbMZaSjcO9vAWw7Bh5YhQ8ZQBk8gyUqLerw5+svbypAh4xpGLU1dv2I6rkE+7tt+rAwZMkYz+NgWemhY1KvdL0OGjBsYT7h4ermrOYranDJkyBjNSINdOgRWazzUGgYyZMiYzSAhMh3/6oTg4iFVhgwZFzB44GttFqbNAVKGDBky2vdwNhnyCKp3MmTIuJJBgmN/XIwfN2XIkHEPgySx5HFpAsyT5225uAwZMg5kpIMO6XUnueX/EmTIkDGU8QHcL9sZNC5C9AAAAABJRU5ErkJggg==" class="article-share-link">分享</a><div class="tags"><a href="/tags/css继承/">css继承</a><a href="/tags/行内元素/">行内元素</a><a href="/tags/块级元素/">块级元素</a></div><div class="post-nav"><a href="/2017/10/23/CSS常见样式2/" class="pre">CSS 常见样式（二）</a><a href="/2017/10/23/CSS编写规范/" class="next">CSS 编写规范</a></div><div id="disqus_thread"><div class="btn_click_load"><button class="disqus_click_btn">阅读评论 「请确保 disqus.com 可以正常加载」</button></div><script>var disqus_shortname = 'Motco';
+var disqus_identifier = '2017/10/23/CSS常见样式1/';
+var disqus_title = 'CSS 常见样式（一）';
+var disqus_url = 'https://motco.github.io/2017/10/23/CSS常见样式1/';
+$('.btn_click_load').click(function() {
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+  $('.btn_click_load').css('display','none');
+});
+$.ajax({
+  url: 'https://disqus.com/next/config.json',
+  timeout: 3000,
+  type: 'GET',
+  success: (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    $('.btn_click_load').css('display','none');
+  })(),
+  error: function() {
+    $('.btn_click_load').css('display','block');
+  }
+});</script><script id="dsq-count-scr" src="//Motco.disqus.com/count.js" async></script></div></div></div></div><div class="pure-u-1 pure-u-md-1-4"><div id="sidebar"><div class="widget"><form action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" class="search-form"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="https://motco.github.io"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Front-End/">Front-End</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/line-height/" style="font-size: 15px;">line-height</a> <a href="/tags/form标签/" style="font-size: 15px;">form标签</a> <a href="/tags/css编写规范/" style="font-size: 15px;">css编写规范</a> <a href="/tags/css引入方式/" style="font-size: 15px;">css引入方式</a> <a href="/tags/css继承/" style="font-size: 15px;">css继承</a> <a href="/tags/行内元素/" style="font-size: 15px;">行内元素</a> <a href="/tags/块级元素/" style="font-size: 15px;">块级元素</a> <a href="/tags/text-align/" style="font-size: 15px;">text-align</a> <a href="/tags/DevTools/" style="font-size: 15px;">DevTools</a> <a href="/tags/inline-bllock/" style="font-size: 15px;">inline-bllock</a> <a href="/tags/元素隐藏/" style="font-size: 15px;">元素隐藏</a> <a href="/tags/选择器/" style="font-size: 15px;">选择器</a> <a href="/tags/优先级/" style="font-size: 15px;">优先级</a> <a href="/tags/float/" style="font-size: 15px;">float</a> <a href="/tags/css定位/" style="font-size: 15px;">css定位</a> <a href="/tags/BFC/" style="font-size: 15px;">BFC</a> <a href="/tags/外边距合并/" style="font-size: 15px;">外边距合并</a> <a href="/tags/css-hack/" style="font-size: 15px;">css-hack</a> <a href="/tags/css-tools/" style="font-size: 15px;">css-tools</a> <a href="/tags/学习资源/" style="font-size: 15px;">学习资源</a> <a href="/tags/cmd/" style="font-size: 15px;">cmd</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/10/23/浏览器兼容/">浏览器兼容</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/23/CSS浮动与定位/">CSS 浮动与定位</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/23/CSS常见样式2/">CSS 常见样式（二）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/23/CSS常见样式1/">CSS 常见样式（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/23/CSS编写规范/">CSS 编写规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/24/IT学习资源/">IT学习资源</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/24/Linux-command/">Linux command</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/24/form标签/">form 标签</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/24/CSS选择器/">CSS 选择器</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/24/CSS基础/">CSS 基础</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-comment-o"> 最近评论</i></div><script type="text/javascript" src="//Motco.disqus.com/recent_comments_widget.js?num_items=5&amp;hide_avatars=1&amp;avatar_size=32&amp;excerpt_length=20&amp;hide_mods=1"></script></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2017 <a href="/." rel="nofollow">Motco.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>

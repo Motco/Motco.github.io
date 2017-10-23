@@ -1,0 +1,204 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="知识海洋无边境 穷尽一生愿遨游"><title>浏览器兼容 | Motco</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/7.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">浏览器兼容</h1><a id="logo" href="/.">Motco</a><p class="description">你不经意间流露的本性才是你的原貌</p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa icon-rss"> 订阅</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">浏览器兼容</h1><div class="post-meta">Oct 23, 2017<script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> 阅读</span></span></div><a data-disqus-identifier="2017/10/23/浏览器兼容/" href="/2017/10/23/浏览器兼容/#disqus_thread" class="disqus-comment-count"></a><div class="post-content"><h4 id="1-CSS-Hack"><a href="#1-CSS-Hack" class="headerlink" title="1. CSS Hack"></a>1. <code>CSS Hack</code></h4><ul>
+<li>问题：不同的流览器或某同一的浏览器的不同版本，对CSS的支持及解析结果不一样，导致生成的页面效果不一样</li>
+<li>目的：在不同的浏览器中得到一致的页面效果</li>
+<li>方案：针对不同的浏览器编写特定的 <code>CSS</code> 样式，让它能够同时兼容不同的浏览器，即 <code>CSS Hack</code></li>
+</ul>
+<h4 id="2-浏览器兼容的思路"><a href="#2-浏览器兼容的思路" class="headerlink" title="2. 浏览器兼容的思路"></a>2. 浏览器兼容的思路</h4><blockquote>
+<ul>
+<li>要不要做<ul>
+<li>产品的角度（产品的受众、受众的浏览器比例、效果优先还是基本功能优先）</li>
+<li>成本的角度 (有无必要做某件事)</li>
+</ul>
+</li>
+<li>做到什么程度<ul>
+<li>让哪些浏览器支持哪些效果</li>
+</ul>
+</li>
+<li>如何做<ul>
+<li>根据兼容需求选择技术框架/库( <code>jquery</code> )</li>
+<li>根据兼容需求选择兼容工具( <code>html5shiv.js</code>、<code>respond.js</code>、<code>css reset</code>、<br><code>normalize.css</code>、<code>Modernizr</code> )</li>
+<li><code>postCSS</code></li>
+<li>条件注释、<code>CSS Hack</code>、<code>js</code> 能力检测做一些修补</li>
+</ul>
+</li>
+<li>渐进增强和优雅降级<ul>
+<li>渐进增强(<code>progressive enhancement</code>):针对低版本浏览器进行构建页面，保证最基本的功能然后再针对高级浏览器进行效果、交互等改进和追加功能达到更好的用户体验</li>
+<li>优雅降级 (<code>graceful degradation</code>): 一开始就构建完整的功能，然后再针对低版本浏览器进行兼容</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h4 id="3-CSS-Hack-的方法"><a href="#3-CSS-Hack-的方法" class="headerlink" title="3. CSS Hack 的方法"></a>3. <code>CSS Hack</code> 的方法</h4><blockquote>
+<ul>
+<li><p>合适的框架</p>
+<ul>
+<li>Bootstrap (&gt;=ie8)</li>
+<li>jQuery 1.~ (&gt;=ie6), jQuery 2.~ (&gt;=ie9)</li>
+<li>Vue (&gt;= ie9)</li>
+<li>…</li>
+</ul>
+</li>
+<li><p>常见属性的兼容情况</p>
+<ul>
+<li>inline-block: &gt;=ie8</li>
+<li>min-width/min-height: &gt;=ie8</li>
+<li>:before,:after: &gt;=ie8</li>
+<li>div:hover: &gt;=ie7</li>
+<li>inline-block: &gt;=ie8</li>
+<li>background-size: &gt;=ie9</li>
+<li>圆角: &gt;= ie9</li>
+<li>阴影: &gt;= ie9</li>
+<li>动画/渐变: &gt;= ie10</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li><p><code>CSS Hack</code> 的方式</p>
+<p><code>CSS Hack</code> 大致有3种表现方式，样式属性前缀，选择器前缀， <code>IE</code> 条件注释</p>
+<ul>
+<li>属性前缀<ul>
+<li>IE6生效：下划线 <code>_</code> ，星号 <code>*</code>，例 <code>{ _color: green; }</code></li>
+<li>IE7生效：星号 <code>*</code>，加号 <code>+</code> 或 <code>*+</code>， 例 <code>{ *color: green; }</code></li>
+<li>IE6-IE10：<code>\9</code>， 例 <code>{ color: green\9; }</code></li>
+<li>…</li>
+</ul>
+</li>
+<li><p>选择器前缀</p>
+<ul>
+<li>IE6生效：<code>*html</code>，例 <code>*html .content { color: green; }</code></li>
+<li>IE7生效：<code>*+html</code>，例 <code>*+html .content { color: green; }</code></li>
+<li>IE6/7生效：<code>@media screen\9 {}</code>，例 <code>@media screen\9 { .content { color: green; } }</code></li>
+<li>IE8生效：<code>@media \0screen {}</code></li>
+<li>IE6/7/8生效：<code>@media \0screen\,screen\9 {}</code></li>
+<li>IE8/9/10/11生效：<code>@media screen\0 {}</code></li>
+<li>IE9/10/11生效：<code>@media screen and (min-width: 0\0) {}</code></li>
+</ul>
+</li>
+<li><p><code>IE</code> 条件注释</p>
+<p>语法：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--[if condition]&gt; HTML &lt;![endif]--&gt;</span></div><div class="line"><span class="comment">&lt;!--[if !condition]&gt;&lt;!--&gt;</span> HTML <span class="comment">&lt;!--&lt;![endif]--&gt;</span></div></pre></td></tr></table></figure>
+<p>条件：</p>
+<figure class="highlight gcode"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">!    [<span class="keyword">if</span> !IE]         非IE</div><div class="line"><span class="keyword">lt</span>   [<span class="keyword">if</span> <span class="keyword">lt</span> IE <span class="number">5.5</span>]   小于IE <span class="number">5.5</span></div><div class="line">lte  [<span class="keyword">if</span> lte IE <span class="number">6</span>]    小于等于IE<span class="number">6</span></div><div class="line"><span class="keyword">gt</span>   [<span class="keyword">if</span> <span class="keyword">gt</span> IE <span class="number">5</span>]     大于 IE<span class="number">5</span></div><div class="line">gte  [<span class="keyword">if</span> gte IE <span class="number">7</span>]    大于等于IE<span class="number">7</span></div><div class="line">|    [<span class="keyword">if</span> <span class="comment">(IE 6)</span>|<span class="comment">(IE 7)</span>]  IE<span class="number">6</span>或者IE<span class="number">7</span></div></pre></td></tr></table></figure>
+<p>范例：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--[if IE]&gt;只在IE浏览器显示&lt;![endif]--&gt;</span></div><div class="line"><span class="comment">&lt;!--[if IE 6]&gt;只在IE6浏览器显示&lt;![endif]--&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!--[if lte IE 8]&gt;&lt;link rel="stylesheet" href="lte-ie-8.css"&gt;&lt;![endif]--&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>浏览器私有前缀</p>
+<ul>
+<li><code>-o</code> 对应 <code>opera</code> 浏览器</li>
+<li><code>-ms</code> 对应 <code>IE</code> 浏览器</li>
+<li><code>-moz</code> 对应 <code>firefox</code> 浏览器</li>
+<li><code>-webkit</code> 对应 <code>safari</code>，<code>chrome</code> 浏览器</li>
+</ul>
+<p>范例：</p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">-webkit-<span class="keyword">box-shadow: </span><span class="number">0</span> <span class="number">1</span>px <span class="number">2</span>px rgba(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, .<span class="number">2</span>)<span class="comment">;</span></div><div class="line">-moz-<span class="keyword">box-shadow: </span><span class="number">0</span> <span class="number">1</span>px <span class="number">2</span>px rgba(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, .<span class="number">2</span>)<span class="comment">;</span></div><div class="line">-o-<span class="keyword">box-shadow: </span><span class="number">0</span> <span class="number">1</span>px <span class="number">2</span>px rgba(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, .<span class="number">2</span>)<span class="comment">;</span></div><div class="line"><span class="keyword">box-shadow: </span><span class="number">0</span> <span class="number">1</span>px <span class="number">2</span>px rgba(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, .<span class="number">2</span>)<span class="comment">;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>常见兼容处理范例</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--[if lt IE 9]&gt;</span></div><div class="line"><span class="comment">  &lt;script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"&gt;&lt;/script&gt;</span></div><div class="line"><span class="comment">  &lt;script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"&gt;&lt;/script&gt;</span></div><div class="line"><span class="comment">&lt;![endif]--&gt;</span></div><div class="line"></div><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="comment">&lt;!--[if IEMobile 7 ]&gt; &lt;html dir="ltr" lang="en-US"class="no-js iem7"&gt; &lt;![endif]--&gt;</span></div><div class="line"><span class="comment">&lt;!--[if lt IE 7 ]&gt; &lt;html dir="ltr" lang="en-US" class="no-js ie6 oldie"&gt; &lt;![endif]--&gt;</span></div><div class="line"><span class="comment">&lt;!--[if IE 7 ]&gt;    &lt;html dir="ltr" lang="en-US" class="no-js ie7 oldie"&gt; &lt;![endif]--&gt;</span></div><div class="line"><span class="comment">&lt;!--[if IE 8 ]&gt;    &lt;html dir="ltr" lang="en-US" class="no-js ie8 oldie"&gt; &lt;![endif]--&gt;</span></div><div class="line"><span class="comment">&lt;!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]&gt;&lt;!--&gt;</span><span class="tag">&lt;<span class="name">html</span> <span class="attr">dir</span>=<span class="string">"ltr"</span> <span class="attr">lang</span>=<span class="string">"en-US"</span> <span class="attr">class</span>=<span class="string">"no-js"</span>&gt;</span></div><div class="line"><span class="comment">&lt;!--&lt;![endif]--&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>refer to <a href="http://book.jirengu.com/jrg-team/frontend-knowledge-ppt/CSS-%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9.md.html" target="_blank" rel="external">浏览器兼容 | jrg-team</a>，<a href="http://browserhacks.com/" target="_blank" rel="external">browserhacks.com</a>，<a href="http://ghmagical.com/article/page/id/I5NohCGdIxAt" target="_blank" rel="external">CSS hack合集 | ghmagical.com</a></p>
+</li>
+</ul>
+<h4 id="4-CSS-工具-名词"><a href="#4-CSS-工具-名词" class="headerlink" title="4. CSS 工具/名词"></a>4. <code>CSS</code> 工具/名词</h4><ul>
+<li><p>工具/名词</p>
+<ul>
+<li><p>条件注释</p>
+<ul>
+<li>条件注释是一种安全地区分 <code>IE</code> 浏览器版本的语法，且被认为是取代针对 <code>IE</code> <code>css hack</code>的首选办法</li>
+<li>基本结构和<code>HTML</code>的注释 <code>&lt;!- -&gt;</code>是一样的，<code>IE</code> 以外的浏览器将会把它们看作是普通的注释而完全忽略它们</li>
+<li><code>IE</code> 将会根据 <code>if</code> 条件来判断是否如解析普通的页面内容一样解析条件注释里的内容</li>
+</ul>
+</li>
+<li><p><code>IE hack</code></p>
+<ul>
+<li>针对 <code>IE</code> 浏览器编写兼容性 <code>CSS</code> 样式，如 <code>IE</code> 条件注释，选择器前缀，属性前缀</li>
+</ul>
+</li>
+<li><p><code>js</code> 能力检测</p>
+<ul>
+<li>在编写代码之前先检测特定浏览器的能力</li>
+<li><a href="https://segmentfault.com/a/1190000004076674" target="_blank" rel="external">「JavaScript 客户端检测——“能力检测”的注意要点」</a></li>
+<li>范例：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getElement</span>(<span class="params">id</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (<span class="built_in">document</span>.getElementById) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="built_in">document</span>.getElementById(id);</div><div class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">document</span>.all) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="built_in">document</span>.all[id];</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'No way to retrieve element'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><code>html5shiv.js</code></p>
+<ul>
+<li>使 <code>IE6-9</code>，<code>Safari 4.x</code>(和 <code>Iphone 3.x</code>)和 <code>Firefox 3.x</code> 支持 <code>HTML5</code> 新增的元素</li>
+<li><a href="https://github.com/aFarkas/html5shiv" target="_blank" rel="external">「html5shiv.js | github」</a></li>
+<li>使用范例：<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--[if lt IE 9]&gt;</span></div><div class="line"><span class="comment">  &lt;script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"&gt;&lt;/script&gt;</span></div><div class="line"><span class="comment">&lt;![endif]--&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><code>respond.js</code></p>
+<ul>
+<li>使 <code>IE6-8</code> 等支持媒体查询 <code>min/max-width CSS3 Media Queries</code></li>
+<li><a href="https://github.com/scottjehl/Respond" target="_blank" rel="external">「respond.js | github」</a></li>
+</ul>
+</li>
+<li><p><code>css reset</code></p>
+<ul>
+<li>通过自定义 <code>CSS</code> 样式，取代不同浏览器默认样式，从而达到统一</li>
+<li>简单粗暴：<code>* { margin:0; padding:0; }</code></li>
+<li><a href="https://segmentfault.com/a/1190000003021766" target="_blank" rel="external">「关于CSS Reset 那些事」</a></li>
+</ul>
+</li>
+<li><p><code>normalize.css</code></p>
+<ul>
+<li>一种取代 <code>CSS reset</code> 的优质方案</li>
+<li><a href="https://github.com/necolas/normalize.css/" target="_blank" rel="external">「normalize.css | github」</a></li>
+</ul>
+</li>
+<li><p><code>modernizr</code></p>
+<ul>
+<li>用于检测当前浏览器对 <code>html5</code> 和 <code>css3</code> 支持情况的 <code>js</code> 库</li>
+<li>可通过检测为 <code>HTML</code> 添加相应的类，不支持的特性则添加 <code>no-</code> 为前缀的类</li>
+<li>默认内置 <code>html5shiv.js</code> 库</li>
+<li><a href="https://segmentfault.com/a/1190000003820989#articleHeader5" target="_blank" rel="external">「JS进阶篇–前端的瑞士军刀Modernizr.js」</a></li>
+<li><a href="https://github.com/Modernizr/Modernizr" target="_blank" rel="external">「modernizr | github」</a></li>
+</ul>
+</li>
+<li><p><code>postCSS</code></p>
+<ul>
+<li>能够使用 <code>JS</code> 插件来转换 <code>CSS</code> 样式的工具</li>
+<li>可通过各种插件来编译尚未被浏览器广泛支持的先进的 <code>CSS</code> 语法，内联图片等</li>
+<li><a href="https://github.com/postcss/postcss" target="_blank" rel="external">「postcss | github」</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>查询站点</p>
+<ul>
+<li><a href="https://caniuse.com/" target="_blank" rel="external">https://caniuse.com/</a></li>
+<li><a href="http://browserhacks.com/" target="_blank" rel="external">http://browserhacks.com/</a></li>
+<li><a href="https://tongji.baidu.com/data/browser" target="_blank" rel="external">https://tongji.baidu.com/data/browser</a></li>
+</ul>
+</li>
+</ul>
+</div><script type="text/javascript" src="/js/share.js?v=0.0.0" async></script><a data-url="https://motco.github.io/2017/10/23/浏览器兼容/" data-id="cj93iausm0004bs8g3sh9l79y" data-qrcode="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACMUlEQVR42u3awW6EMAxF0fn/n6bbkRDhPpuphHOzqiiUHBaviZ3PB4/ja3xfOd9zvv9859VTV1ceGzJkyHgt41iO9T1r6pq3ngOfmwwZMvZhrKMwvYdPPY31y+syZMiQAabIwzFdYsqQIUNGLXBJpJIwJVdkyJAhg29i05BNt7vpu2TIkLEPg1fd///nn/Q3ZMiQ8SpGJzR5mYzEayfQZciQMZvBA65W3O/A4vnIkCFjKINM4qkY5QvN+KCYDBkyRjNqJXtevidBnMb0zf8NGTJkDGWkR7Vq19M4bi0fZciQMYjBg4+DO3V78qUvq4YyZMjYgME3tGmJvxbHQWtThgwZoxmd5Vp6SIsj+ZWbM24yZMgYxOBFrjQWOwvNx6qGMmTI2ICRdgnJ6GySL5+VIUPGUEa6Na0dae1/FNTNkCFDxmhG2pjsHOrinVXyd1B/Q4YMGUMZ6OEwQNPfBkOGDBkbMGpLNF4gIwW4NSboaciQIWMco5ZgtQ1nLYhrpToZMmTMY9Re/FQLIT1GdnPYQoYMGaMZteUamS7ZrKaLyOJWVoYMGSMYpDDXWdh1tqY3n0OGDBlDGUc4+HGKICgbW2h0HkSGDBkvZ9S6hHyifKFJgrgW6zJkyJjBICFbOySRxnTtHhkyZOzD6Gwy0+J+GsHoKRkyZMhoT/Tna1gZMmTIKG1Ha28k0fxY4MqQIeNVjFpjMm0PpP3VYPMsQ4aM0Yw0IuMDW41gTRepMmTIGMf4A2RYapgCFzOdAAAAAElFTkSuQmCC" class="article-share-link">分享</a><div class="tags"><a href="/tags/css-hack/">css-hack</a><a href="/tags/css-tools/">css-tools</a></div><div class="post-nav"><a href="/2017/10/23/CSS浮动与定位/" class="next">CSS 浮动与定位</a></div><div id="disqus_thread"><div class="btn_click_load"><button class="disqus_click_btn">阅读评论 「请确保 disqus.com 可以正常加载」</button></div><script>var disqus_shortname = 'Motco';
+var disqus_identifier = '2017/10/23/浏览器兼容/';
+var disqus_title = '浏览器兼容';
+var disqus_url = 'https://motco.github.io/2017/10/23/浏览器兼容/';
+$('.btn_click_load').click(function() {
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+  $('.btn_click_load').css('display','none');
+});
+$.ajax({
+  url: 'https://disqus.com/next/config.json',
+  timeout: 3000,
+  type: 'GET',
+  success: (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    $('.btn_click_load').css('display','none');
+  })(),
+  error: function() {
+    $('.btn_click_load').css('display','block');
+  }
+});</script><script id="dsq-count-scr" src="//Motco.disqus.com/count.js" async></script></div></div></div></div><div class="pure-u-1 pure-u-md-1-4"><div id="sidebar"><div class="widget"><form action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" class="search-form"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="https://motco.github.io"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Front-End/">Front-End</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/line-height/" style="font-size: 15px;">line-height</a> <a href="/tags/form标签/" style="font-size: 15px;">form标签</a> <a href="/tags/css编写规范/" style="font-size: 15px;">css编写规范</a> <a href="/tags/css引入方式/" style="font-size: 15px;">css引入方式</a> <a href="/tags/css继承/" style="font-size: 15px;">css继承</a> <a href="/tags/行内元素/" style="font-size: 15px;">行内元素</a> <a href="/tags/块级元素/" style="font-size: 15px;">块级元素</a> <a href="/tags/text-align/" style="font-size: 15px;">text-align</a> <a href="/tags/DevTools/" style="font-size: 15px;">DevTools</a> <a href="/tags/inline-bllock/" style="font-size: 15px;">inline-bllock</a> <a href="/tags/元素隐藏/" style="font-size: 15px;">元素隐藏</a> <a href="/tags/选择器/" style="font-size: 15px;">选择器</a> <a href="/tags/优先级/" style="font-size: 15px;">优先级</a> <a href="/tags/float/" style="font-size: 15px;">float</a> <a href="/tags/css定位/" style="font-size: 15px;">css定位</a> <a href="/tags/BFC/" style="font-size: 15px;">BFC</a> <a href="/tags/外边距合并/" style="font-size: 15px;">外边距合并</a> <a href="/tags/css-hack/" style="font-size: 15px;">css-hack</a> <a href="/tags/css-tools/" style="font-size: 15px;">css-tools</a> <a href="/tags/学习资源/" style="font-size: 15px;">学习资源</a> <a href="/tags/cmd/" style="font-size: 15px;">cmd</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/10/23/浏览器兼容/">浏览器兼容</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/23/CSS浮动与定位/">CSS 浮动与定位</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/23/CSS常见样式2/">CSS 常见样式（二）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/23/CSS常见样式1/">CSS 常见样式（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/23/CSS编写规范/">CSS 编写规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/24/IT学习资源/">IT学习资源</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/24/Linux-command/">Linux command</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/24/form标签/">form 标签</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/24/CSS选择器/">CSS 选择器</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/24/CSS基础/">CSS 基础</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-comment-o"> 最近评论</i></div><script type="text/javascript" src="//Motco.disqus.com/recent_comments_widget.js?num_items=5&amp;hide_avatars=1&amp;avatar_size=32&amp;excerpt_length=20&amp;hide_mods=1"></script></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2017 <a href="/." rel="nofollow">Motco.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>

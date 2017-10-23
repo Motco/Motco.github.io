@@ -1,0 +1,199 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="知识海洋无边境 穷尽一生愿遨游"><title>CSS 浮动与定位 | Motco</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/7.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">CSS 浮动与定位</h1><a id="logo" href="/.">Motco</a><p class="description">你不经意间流露的本性才是你的原貌</p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa icon-rss"> 订阅</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">CSS 浮动与定位</h1><div class="post-meta">Oct 23, 2017<span> | </span><span class="category"><a href="/categories/Front-End/">Front-End</a></span><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> 阅读</span></span></div><a data-disqus-identifier="2017/10/23/CSS浮动与定位/" href="/2017/10/23/CSS浮动与定位/#disqus_thread" class="disqus-comment-count"></a><div class="post-content"><h4 id="1-float-的影响"><a href="#1-float-的影响" class="headerlink" title="1. float 的影响"></a>1. <code>float</code> 的影响</h4><ul>
+<li><p><code>float</code> 属性指定一个元素应沿其容器的左侧或右侧放置，允许文本和内联元素环绕它</p>
+<ul>
+<li>浮动的元素可以向左或向右移动，直到它的外边缘碰到块框或另一个浮动元素的边框为止</li>
+<li>由于浮动元素不在文档的普通流中，所以文档的普通流中的块框表现得像浮动元素不存在一样</li>
+</ul>
+</li>
+<li><p><code>float</code> 属性的影响</p>
+<ul>
+<li>父元素，如果父元素没有设置高度，且其子元素都为浮动元素，那么其高度会发生坍塌</li>
+<li>其他浮动元素，其它浮动元素会贴在浮动元素的后面，如果剩余的空间不够，那么其它元素会分配到下一行</li>
+<li>普通元素，普通元素会占据浮动元素原来的位置</li>
+<li>文字，文字能识别到浮动元素的存在，会围绕着浮动元素</li>
+</ul>
+<p><em>refer to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/float" target="_blank" rel="external">CSS属性：float | MDN </a></em></p>
+</li>
+</ul>
+<h4 id="2-清除浮动"><a href="#2-清除浮动" class="headerlink" title="2. 清除浮动"></a>2. 清除浮动</h4><ul>
+<li>清除浮动指当一个盒子使用 <code>float</code> 属性，解决其父级对象盒子高度无法撑开的问题</li>
+<li><p>清除浮动的方法</p>
+<ul>
+<li><p>父元素设置 <code>overflow: hidden;</code> 会自动适配高度，即创建一个<a href="https://www.w3.org/TR/CSS22/visuren.html" target="_blank" rel="external">「BFC」</a></p>
+<ul>
+<li>需要配合 <code>width</code> 或者 <code>*zoom: 1;</code> 触发 <code>ie</code> 的 <code>haslayout</code> 属性来兼容 <code>ie6</code> 和 <code>ie7</code></li>
+<li>超出的内容会被隐藏，因此不宜和 <code>position</code> 配合使用</li>
+<li>若设置成 <code>overflow: auto;</code>，内容超出时会出现滚动条</li>
+</ul>
+</li>
+<li><p>父元素中的最后一个子元素设为 <code>&lt;br clear=&quot;both&quot;/&gt;</code>，或其他空元素，样式设为 <code>clear: both;</code></p>
+<ul>
+<li>当 <code>clear</code> 属性应用于非浮动块时，会将它的 <code>border edge</code> 移动到所有相关浮动元素<br><code>margin edge</code> 的下方，导致<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing" target="_blank" rel="external">「margin collapsing」</a>不起作用</li>
+<li>当 <code>clear</code> 属性应用于浮动元素时，会将它的 <code>margin edge</code> 移动到所有相关浮动元素<br><code>margin edge</code> 的下方，导致后面的浮动元素的位置无法高于它之前的元素</li>
+</ul>
+</li>
+<li><p>父元素设置伪元素 <code>:after</code>，同时添加以下属性</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.parent-container</span>:after &#123;</div><div class="line">  <span class="attribute">content</span>:<span class="string">""</span>;     <span class="comment">/* 内容须设为空 */</span></div><div class="line">  <span class="attribute">display</span>:block;</div><div class="line">  <span class="attribute">clear</span>:both;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.parent-container</span> &#123;</div><div class="line">  *zoom: <span class="number">1</span>;       <span class="comment">/* 触发ie6，7的 haslayout 属性 */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>父元素设置 <code>float</code>，同子元素一起浮动，较少使用</p>
+</li>
+<li>父元素设置 <code>height</code>，适用于浮动元素高度确定的情况，较少使用</li>
+<li>父元素设置 <code>display</code> 属性值为 <code>table</code>，<code>table-cell</code>，<code>inline-block</code>等，不推荐使用</li>
+</ul>
+<p><em>refer to <a href="https://www.w3.org/TR/CSS22/visuren.html#flow-control" target="_blank" rel="external">float | W3C</a>，<a href="http://w3help.org/zh-cn/casestudies/001" target="_blank" rel="external">清理浮动的几种方法</a>，<a href="http://www.iyunlu.com/view/css-xhtml/55.html" target="_blank" rel="external">那些年我们一起清除过的浮动 | iyunlu</a></em></p>
+</li>
+</ul>
+<h4 id="3-CSS定位"><a href="#3-CSS定位" class="headerlink" title="3. CSS定位"></a>3. <code>CSS</code>定位</h4><ul>
+<li><p><code>CSS</code>有三种基本定位机制，除非专门指定，否则所有框都在普通流中定位：</p>
+<ul>
+<li>普通流 （默认定位 <code>static</code> 和相对定位 <code>relative</code>）</li>
+<li>浮动 （<code>float</code>）</li>
+<li>绝对定位 （<code>absolute</code>）</li>
+</ul>
+<p><code>CSS</code> 定位相关属性：</p>
+<p>  属性 | 描述<br>  :– |:–<br>  position | 将元素放置到一个静态的、相对的、绝对的、或固定的位置中<br>  top/right/bottom/left | 定义元素的外边距边界与其包含块边界之间的偏移<br>  overflow | 当元素的内容溢出其区域时的显示方式<br>  clip | 定义一个剪裁矩形，用来剪裁绝对定位元素<br>  vertical-align | 定义元素的垂直对齐方式<br>  z-index | 定义元素的堆叠次序</p>
+</li>
+<li><p><code>position</code> 属性规定的元素定位类型</p>
+<ul>
+<li><code>static</code><ul>
+<li>默认属性，指定元素使用文档的普通流</li>
+<li>此时 <code>top</code>, <code>right</code>,<code>bottom</code>, <code>left</code> 和 <code>z-index</code> 属性无效</li>
+</ul>
+</li>
+<li><code>relative</code><ul>
+<li>生成相对定位的元素，相对于其正常位置进行偏移</li>
+<li>元素位置通过 <code>left</code>, <code>top</code>, <code>right</code> 以及 <code>bottom</code> 的值来指定</li>
+<li>元素仍会占据原来的空间，不会破坏页面原始布局</li>
+<li>可以通过设置 <code>z-index</code> 属性来控制这些框的堆叠次序</li>
+</ul>
+</li>
+<li><code>absolute</code><ul>
+<li>生成绝对定位的元素，相对于最近的非 <code>static</code> 定位的祖先元素进行定位</li>
+<li>绝对定位的元素可以设置外边距 <code>margin</code>，且不会与其他边距合并</li>
+<li>不会预留空间，脱离了文档的普通流，可以覆盖页面上的其它元素</li>
+<li>可以通过设置 <code>z-index</code> 属性来控制这些框的堆叠次序</li>
+</ul>
+</li>
+<li><p><code>fixed</code></p>
+<ul>
+<li>生成绝对定位的元素，类似 <code>absolute</code>，不过是相对于浏览器窗口进行定位</li>
+<li>页面顶部的导航条，回到顶部按钮等基本采用此定位方式</li>
+</ul>
+<p>其他全局值：</p>
+</li>
+<li><code>inherit</code><ul>
+<li>从父元素继承，<code>IE8</code>之前不支持</li>
+</ul>
+</li>
+<li><code>initial</code><ul>
+<li>设置 <code>CSS</code> 属性为它的默认值，可作用于任何 <code>CSS</code> 样式</li>
+</ul>
+</li>
+<li><code>unset</code><ul>
+<li>如果该属性是默认继承属性，该值等同于 <code>inherit</code></li>
+<li>如果该属性是非继承属性，该值等同于 <code>initial</code></li>
+</ul>
+</li>
+</ul>
+<p><em>refer to <a href="http://www.w3school.com.cn/css/css_positioning.asp" target="_blank" rel="external">CSS定位 | w3school</a>，<a href="https://segmentfault.com/a/1190000003856280#articleHeader2" target="_blank" rel="external">CSS定位浮动 | segmentfault</a>，<a href="https://github.com/chokcoco/iCSS" target="_blank" rel="external">chokcoco:CSS进阶系列 | github</a>，<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/position" target="_blank" rel="external">CSS属性position | MDN</a></em></p>
+</li>
+<li><p><code>z-index</code> 属性设置元素的堆叠顺序</p>
+<ul>
+<li>拥有更高堆叠顺序的元素总是会处于堆叠顺序较低的元素的前面，即覆盖较小的那个</li>
+<li>元素可拥有负的 <code>z-index</code> 属性值，会在未设置 <code>z-index</code> 元素的后面</li>
+<li>仅能在定位元素（即 <code>position</code> 属性值是非 <code>static</code> 的元素）上奏效</li>
+</ul>
+<p><em>refer to <a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Understanding_z_index" target="_blank" rel="external">理解CSS的z-index属性 | MDN</a>，<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context" target="_blank" rel="external">层叠上下文 | MDN</a></em></p>
+</li>
+<li><p><code>position: relative</code> 和负 <code>margin</code> 的区别</p>
+<ul>
+<li><code>position: relative</code>元素偏移时，仍会占据原来的空间，不会破坏页面原始布局</li>
+<li>负 <code>margin</code> 偏移时，元素占据的空间会随着 <code>margin</code> 绝对值的增大而减小，当前容器的布局也会做出相应变化</li>
+</ul>
+</li>
+</ul>
+<h4 id="4-BFC-块格式化上下文"><a href="#4-BFC-块格式化上下文" class="headerlink" title="4. BFC 块格式化上下文"></a>4. <code>BFC</code> 块格式化上下文</h4><ul>
+<li>块格式化上下文（block formatting context）是<code>Web</code>页面的可视化<code>CSS</code>渲染出的一部分。它是一个独立的渲染区域，规定了内部块级元素如何布局，并且与这个区域外部毫不相干。</li>
+<li><p><code>BFC</code> 由以下任意项生成</p>
+<ul>
+<li><code>float</code> 属性值不为 <code>none</code></li>
+<li><code>overflow</code> 属性值不为 <code>visible</code></li>
+<li><code>position: absolute | fixed</code></li>
+<li><code>display: inline-block | table-cell | table-caption</code></li>
+<li>…</li>
+</ul>
+</li>
+<li><p><code>BFC</code> 的作用</p>
+<ul>
+<li>防止两个相邻块级盒子垂直外边距折叠</li>
+<li>清除浮动，避免父元素高度坍塌</li>
+<li>避免文字环绕浮动元素</li>
+<li>多列布局</li>
+</ul>
+<p><em>refer to <a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Block_formatting_context" target="_blank" rel="external">块格式化上下文 | MDN</a>，<a href="https://segmentfault.com/a/1190000003068557#articleHeader5" target="_blank" rel="external">译文：理解CSS中的块级格式化上下文 | segmentfault</a>，<a href="http://blog.csdn.net/u012999771/article/details/49253059" target="_blank" rel="external">布局方案之-多列布局 | csdn</a></em></p>
+</li>
+</ul>
+<h4 id="5-Margin-Collapsing-外边距合并"><a href="#5-Margin-Collapsing-外边距合并" class="headerlink" title="5. Margin Collapsing 外边距合并"></a>5. <code>Margin Collapsing</code> 外边距合并</h4><ul>
+<li><p>外边距合并指的是，当两个垂直外边距相遇时，它们将形成一个外边距。可分以下三种情况：</p>
+<ul>
+<li>相邻的兄弟元素<ul>
+<li>第一个元素的下外边距与第二个元素的上外边距会发生合并</li>
+</ul>
+</li>
+<li>父元素与子元素（没有内边距或边框隔开）<ul>
+<li>第一个子元素的上外边距和父元素的上外边距</li>
+<li>最后一个子元素的下外边距和父元素的下外边距</li>
+</ul>
+</li>
+<li>空元素（没有边框或填充）<ul>
+<li>自身上下外边距重合</li>
+<li>如果这个外边距遇到另一个元素的外边距，它还会发生合并</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>合并后外边距的高度计算规则</p>
+<ul>
+<li>若都为正值，将取两个合并的外边距值中的较大者</li>
+<li>若都为负值，将取两个合并的外边距绝对值中的较大者，负向偏移</li>
+<li>若为一正一负，将取两者之和，和为负值则负向偏移</li>
+</ul>
+</li>
+<li><p>外边距不合并的方法</p>
+<p>只有普通文档流中块框的垂直外边距才会发生外边距合并，行内框、浮动框或绝对定位之间的外边距不会合并。因此可采用以下方法：</p>
+<ul>
+<li>设置 <code>inline-block</code>，浮动元素<code>float</code>，或绝对定位 <code>absolute | fixed</code></li>
+<li>针对父子元素，还可以给父元素设置 <code>border</code> 或 <code>padding</code>，或设置 <code>overflow: hidden | scroll | auto;</code></li>
+</ul>
+<p>父子元素外边距合并<a href="http://js.jirengu.com/hiranaloka/1/edit" target="_blank" rel="external">示例</a>：</p>
+<p>  <img src="http://www.z4a.net/images/2017/10/09/0736s.png" alt="0736s.png"></p>
+<p><em>refer to <a href="http://www.w3school.com.cn/css/css_margin_collapsing.asp" target="_blank" rel="external">CSS 外边距合并 | w3school</a></em></p>
+</li>
+</ul>
+<p>  <a href="http://js.jirengu.com/dovoholuve/1/edit" target="_blank" rel="external">「代码1」</a>，<br>  <a href="http://js.jirengu.com/gufepicano/2/edit" target="_blank" rel="external">「代码2」</a>，<br>  <a href="http://js.jirengu.com/xatuyaniba/2/edit" target="_blank" rel="external">「代码3」</a>，<br>  <a href="http://js.jirengu.com/wupimeduru/2/edit" target="_blank" rel="external">「代码4」</a></p>
+</div><script type="text/javascript" src="/js/share.js?v=0.0.0" async></script><a data-url="https://motco.github.io/2017/10/23/CSS浮动与定位/" data-id="cj93iaurf0002bs8gddkuubaz" data-qrcode="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJUlEQVR42u3aS27DMAwFwNz/0u66KOK8RzkFLI9WRuCPRgtGFPl6xeP4M/7+/u7+5M3nv1w2MDAwbss4TkfCmL2/XabzN2BgYDyBcR4Kk3vehdo8KOfLhIGBgXHOaK/zjebK8mFgYGAkqWYSLvMNIgYGBsYsiU1enR+f5ct3cS6OgYFxQ0Z+6v7/11+pb2BgYNyKcZSjDYLtPcNZYWBgbM2YlSGvCsftlvHDfDAwMB7ASELeetkyb61oYRgYGE9gzEqP1049b7z48L+BgYGxEWNWbmxLj/nUh80WGBgYWzNmaWdewlxfgqKlDAMDY2tG2+yVZJHX5pt1aRMDA2M7RpuO5uxZYSB5/9t9LgYGxmMYbfKZfCyf+jCWYmBgbMpI0tf1kmedgpahHAMDY29GEhxnSWb+7BebLTAwMLZgHMG4asOXpLVt+vpra4iBgbEpY3ZMlpcE2oUYVjMwMDC2Zswav9oPt8+27RoYGBh7M/ItWl48yJPPWbGzOG7DwMDYjtEmorPDtbYgcUGzBQYGxtaMlc3fytZzxsPAwHgCY+V47jUa7eHaBwwGBsamjKMcbZvFrHW1LlFgYGBszVgpcObU76W7NQYDA+O2jPXyZNtOkZQT8nswMDCew5glmfXHyukWT2FgYGAEx/15u8bFDWEYGBgYC0XHtl0sP9q77H8DAwPjVowkLK6XDdoN4ldycQwMjBsy2saIdsPXBtYWg4GBsTXjB5oIdHKp/uJ0AAAAAElFTkSuQmCC" class="article-share-link">分享</a><div class="tags"><a href="/tags/float/">float</a><a href="/tags/css定位/">css定位</a><a href="/tags/BFC/">BFC</a><a href="/tags/外边距合并/">外边距合并</a></div><div class="post-nav"><a href="/2017/10/23/浏览器兼容/" class="pre">浏览器兼容</a><a href="/2017/10/23/CSS常见样式2/" class="next">CSS 常见样式（二）</a></div><div id="disqus_thread"><div class="btn_click_load"><button class="disqus_click_btn">阅读评论 「请确保 disqus.com 可以正常加载」</button></div><script>var disqus_shortname = 'Motco';
+var disqus_identifier = '2017/10/23/CSS浮动与定位/';
+var disqus_title = 'CSS 浮动与定位';
+var disqus_url = 'https://motco.github.io/2017/10/23/CSS浮动与定位/';
+$('.btn_click_load').click(function() {
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+  $('.btn_click_load').css('display','none');
+});
+$.ajax({
+  url: 'https://disqus.com/next/config.json',
+  timeout: 3000,
+  type: 'GET',
+  success: (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    $('.btn_click_load').css('display','none');
+  })(),
+  error: function() {
+    $('.btn_click_load').css('display','block');
+  }
+});</script><script id="dsq-count-scr" src="//Motco.disqus.com/count.js" async></script></div></div></div></div><div class="pure-u-1 pure-u-md-1-4"><div id="sidebar"><div class="widget"><form action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" class="search-form"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="https://motco.github.io"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Front-End/">Front-End</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/line-height/" style="font-size: 15px;">line-height</a> <a href="/tags/form标签/" style="font-size: 15px;">form标签</a> <a href="/tags/css编写规范/" style="font-size: 15px;">css编写规范</a> <a href="/tags/css引入方式/" style="font-size: 15px;">css引入方式</a> <a href="/tags/css继承/" style="font-size: 15px;">css继承</a> <a href="/tags/行内元素/" style="font-size: 15px;">行内元素</a> <a href="/tags/块级元素/" style="font-size: 15px;">块级元素</a> <a href="/tags/text-align/" style="font-size: 15px;">text-align</a> <a href="/tags/DevTools/" style="font-size: 15px;">DevTools</a> <a href="/tags/inline-bllock/" style="font-size: 15px;">inline-bllock</a> <a href="/tags/元素隐藏/" style="font-size: 15px;">元素隐藏</a> <a href="/tags/选择器/" style="font-size: 15px;">选择器</a> <a href="/tags/优先级/" style="font-size: 15px;">优先级</a> <a href="/tags/float/" style="font-size: 15px;">float</a> <a href="/tags/css定位/" style="font-size: 15px;">css定位</a> <a href="/tags/BFC/" style="font-size: 15px;">BFC</a> <a href="/tags/外边距合并/" style="font-size: 15px;">外边距合并</a> <a href="/tags/css-hack/" style="font-size: 15px;">css-hack</a> <a href="/tags/css-tools/" style="font-size: 15px;">css-tools</a> <a href="/tags/学习资源/" style="font-size: 15px;">学习资源</a> <a href="/tags/cmd/" style="font-size: 15px;">cmd</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/10/23/浏览器兼容/">浏览器兼容</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/23/CSS浮动与定位/">CSS 浮动与定位</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/23/CSS常见样式2/">CSS 常见样式（二）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/23/CSS常见样式1/">CSS 常见样式（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/23/CSS编写规范/">CSS 编写规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/24/IT学习资源/">IT学习资源</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/24/Linux-command/">Linux command</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/24/form标签/">form 标签</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/24/CSS选择器/">CSS 选择器</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/24/CSS基础/">CSS 基础</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-comment-o"> 最近评论</i></div><script type="text/javascript" src="//Motco.disqus.com/recent_comments_widget.js?num_items=5&amp;hide_avatars=1&amp;avatar_size=32&amp;excerpt_length=20&amp;hide_mods=1"></script></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2017 <a href="/." rel="nofollow">Motco.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>

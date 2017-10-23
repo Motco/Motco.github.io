@@ -1,0 +1,104 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="知识海洋无边境 穷尽一生愿遨游"><title>Chrome DevTools | Motco</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/7.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Chrome DevTools</h1><a id="logo" href="/.">Motco</a><p class="description">你不经意间流露的本性才是你的原貌</p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa icon-rss"> 订阅</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">Chrome DevTools</h1><div class="post-meta">Sep 24, 2017<span> | </span><span class="category"><a href="/categories/Front-End/">Front-End</a></span><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> 阅读</span></span></div><a data-disqus-identifier="2017/09/24/Chrome-DevTools/" href="/2017/09/24/Chrome-DevTools/#disqus_thread" class="disqus-comment-count"></a><div class="post-content"><h4 id="Chrome-开发者工具是一套内置于Google-Chrome中的Web开发和调试工具，可用来对网站进行迭代、调试和分析"><a href="#Chrome-开发者工具是一套内置于Google-Chrome中的Web开发和调试工具，可用来对网站进行迭代、调试和分析" class="headerlink" title="Chrome 开发者工具是一套内置于Google Chrome中的Web开发和调试工具，可用来对网站进行迭代、调试和分析"></a><a name="jp0">Chrome</a> 开发者工具是一套内置于Google Chrome中的Web开发和调试工具，可用来对网站进行迭代、调试和分析</h4><ul>
+<li><p>打开方式</p>
+<ul>
+<li>在Chrome菜单中选择 更多工具 &gt; 开发者工具</li>
+<li>在页面元素上右键点击，选择 “检查”</li>
+<li>使用快捷键 <code>Ctrl+Shift+I</code>/<code>F12</code> (Windows) 或 <code>Cmd+Opt+I</code> (Mac)</li>
+</ul>
+</li>
+<li><p>了解面板Overview</p>
+<ul>
+<li><p>设备模式(Device Mode)，使用设备模式构建完全响应式，模拟移动设备</p>
+<ul>
+<li><a href="https://developers.google.com/web/tools/chrome-devtools/device-mode/" target="_blank" rel="external">Device Mode</a></li>
+<li><a href="https://developers.google.com/web/tools/chrome-devtools/device-mode/emulate-mobile-viewports" target="_blank" rel="external">测试自适应和设备特定的视口</a></li>
+<li><a href="https://developers.google.com/web/tools/chrome-devtools/device-mode/device-input-and-sensors" target="_blank" rel="external">模拟传感器：地理定位与加速度计</a></li>
+</ul>
+</li>
+<li><p>元素面板(Elements)，使用元素面板可以自由的操作DOM和CSS来迭代布局和设计页面</p>
+<ul>
+<li><a href="https://developers.google.com/web/tools/chrome-devtools/inspect-styles/" target="_blank" rel="external">检查和调整页面</a></li>
+<li><a href="https://developers.google.com/web/tools/chrome-devtools/inspect-styles/edit-styles" target="_blank" rel="external">编辑样式</a></li>
+<li><a href="https://developers.google.com/web/tools/chrome-devtools/inspect-styles/edit-dom" target="_blank" rel="external">编辑DOM</a><br><img src="http://www.z4a.net/images/2017/09/18/40-34.png" alt="元素面板"></li>
+</ul>
+</li>
+<li><p>控制台面板(Console)，在开发期间，可以使用控制台面板记录诊断信息，或者使用它作为 shell在页面上与JavaScript交互</p>
+<ul>
+<li><a href="https://developers.google.com/web/tools/chrome-devtools/console/" target="_blank" rel="external">使用控制台面板</a></li>
+<li><a href="https://developers.google.com/web/tools/chrome-devtools/console/" target="_blank" rel="external">命令行交互</a><br><img src="http://www.z4a.net/images/2017/09/18/49-02.png" alt="控制台"></li>
+</ul>
+</li>
+<li><p>源代码面板(Sources)，在源代码面板中设置断点来调试JavaScript，或者通过Workspaces连接本地文件来使用开发者工具的实时编辑器</p>
+<ul>
+<li><a href="https://developers.google.com/web/tools/chrome-devtools/javascript/add-breakpoints" target="_blank" rel="external">断点调试</a></li>
+<li><a href="https://developers.google.com/web/tools/chrome-devtools/javascript/add-breakpoints" target="_blank" rel="external">调试混淆的代码</a></li>
+<li><a href="https://developers.google.com/web/tools/setup/setup-workflow" target="_blank" rel="external">使用开发者工具的Workspaces进行持久化保存</a></li>
+</ul>
+</li>
+<li><p>网络面板(Network)，使用网络面板了解请求和下载的资源文件并优化网页加载性能</p>
+<ul>
+<li><a href="https://developers.google.com/web/tools/chrome-devtools/network-performance/resource-loading" target="_blank" rel="external">测量网站网络性能</a></li>
+<li><a href="https://developers.google.com/web/tools/chrome-devtools/network-performance/understanding-resource-timing" target="_blank" rel="external">查看资源时间轴</a></li>
+<li><a href="https://developers.google.com/web/tools/chrome-devtools/network-performance/network-conditions" target="_blank" rel="external">查看网络带宽限制</a></li>
+</ul>
+</li>
+<li><p>性能面板(Performance)，在 Chrome 57 之后时间线面板更名为性能面板，使用时间轴面板可以通过记录和查看网站生命周期内发生的各种事件来提高页面的运行时性能</p>
+<ul>
+<li><a href="https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/timeline-tool" target="_blank" rel="external">查看性能</a></li>
+<li><a href="https://developers.google.com/web/tools/chrome-devtools/rendering-tools/" target="_blank" rel="external">分析运行时性能</a></li>
+<li><a href="https://developers.google.com/web/tools/chrome-devtools/rendering-tools/forced-synchronous-layouts" target="_blank" rel="external">调试强制同步布局</a></li>
+</ul>
+</li>
+<li><p>内存面板(Memory)，在 Chrome 57 之后分析面板更名为内存面板，如果需要比时间轴面板提供的更多信息，可以使用内存下“配置”面板，例如跟踪内存泄漏</p>
+<ul>
+<li><a href="https://developers.google.com/web/tools/chrome-devtools/rendering-tools/js-execution" target="_blank" rel="external">JavaScript CPU 分析器</a></li>
+<li><a href="https://developers.google.com/web/tools/chrome-devtools/memory-problems/" target="_blank" rel="external">内存堆区分析器</a></li>
+</ul>
+</li>
+<li><p>应用面板(Application)，在 Chrome 52 之后资源面板更名为应用面板，使用资源面板检查加载的所有资源，包括IndexedDB与Web SQL数据库，本地和会话存储，cookie，应用程序缓存，图像，字体和样式表</p>
+<ul>
+<li><a href="https://developers.google.com/web/tools/chrome-devtools/manage-data/local-storage" target="_blank" rel="external">检查和管理存储、数据库与缓存</a></li>
+</ul>
+</li>
+<li><p>安全面板(Security)，使用安全面板调试混合内容问题，证书问题等等</p>
+<ul>
+<li><a href="https://developers.google.com/web/tools/chrome-devtools/security" target="_blank" rel="external">调试安全问题</a></li>
+</ul>
+</li>
+<li><p>审查应用(Audits)，可使用 Lighthouse 扩展审查网络应用，为 Lighthouse 提供一个要审查的网址，它将针对此页面运行一连串的测试，然后生成一个有关页面性能的报告</p>
+<ul>
+<li><a href="https://developers.google.com/web/tools/lighthouse/" target="_blank" rel="external">使用 Lighthouse 审查网络应用</a></li>
+</ul>
+</li>
+</ul>
+<p><em>refer to <a href="https://developers.google.com/web/tools/chrome-devtools/?utm_campaign=2016q3&amp;utm_medium=redirect&amp;utm_source=dcc" target="_blank" rel="external">Chrome DevTools</a></em></p>
+</li>
+<li><p>快捷键参考 <a href="#jp0"><strong>TOP</strong></a><br><img src="http://www.z4a.net/images/2017/09/18/2017-09-17_23-15-00.png" alt="快捷键"><br><a href="#jp0"><strong>TOP</strong></a></p>
+</li>
+</ul>
+</div><script type="text/javascript" src="/js/share.js?v=0.0.0" async></script><a data-url="https://motco.github.io/2017/09/24/Chrome-DevTools/" data-id="cj949633n0000ww8giobl775v" data-qrcode="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJ0lEQVR42u3aS5LDMAhFUe9/0+4FpKS+D5xUGV2NXIl/JwOCgOvC616sz29X5+/vvP/ksSVDhozXMu7tqp2zei1+f/5cGTJknMPYh8LV8T7g7nnkTHKVDBkyZJB07QaLP1GGDBkyvhFwU2otcMuQIUMG2aDWQi1/3R/txWXIkPFCBq+6//74K/0NGTJkvIpxh4uX+9NyW2fJkCFjNoMHOF44I8kl+TZ+HxkyZBzDSMNuyiZJIW8kXOk/gAwZMl7LSAcmeDGOBGIOQOmmDBkyhjJqhXg+MNEf44g7sTJkyBjH6GxZ+wW1/WY4DdwyZMiYykhLY/zW6eBX2lS4OreWIUPGCxnppjFN2p5qBiw/kSFDxmhGrVXwbDbKk8sgEMuQIWMco5iQhYU2Hr75GIcMGTJOY9Qu3gfEfhhtDVvIkCFjBIM/vvYAvkmuvacMGTJmM2obS07lI7C1UTP0W8qQIWMQI5jFaPwQnWbn8okyZMgYzSAJH3lwJ7Ej42JxS0CGDBlDGbwxUGtJ9st5//x8MmTIOJKRHqdB87FNrAwZMo5n7M+vtS1rL4r6GzJkyBjHuMPFYbXBr+K2WYYMGaMZ/byL8GrtTJ6MypAh4wRGGi47IbUWvlEDVYYMGQcw0sBHruJjE+l4B+rEypAh42BGelWaPhZbBTJkyJDxUKG/NsaB2g8yZMg4gJEOTNT6pXwsLAbLkCFjNKM26FBM4EJeWuCTIUPGOMYffwNVg5Np6ewAAAAASUVORK5CYII=" class="article-share-link">分享</a><div class="tags"><a href="/tags/DevTools/">DevTools</a></div><div class="post-nav"><a href="/2017/09/24/CSS基础/" class="pre">CSS 基础</a><a href="/2017/09/24/hello-world/" class="next">Hello World</a></div><div id="disqus_thread"><div class="btn_click_load"><button class="disqus_click_btn">阅读评论 「请确保 disqus.com 可以正常加载」</button></div><script>var disqus_shortname = 'Motco';
+var disqus_identifier = '2017/09/24/Chrome-DevTools/';
+var disqus_title = 'Chrome DevTools';
+var disqus_url = 'https://motco.github.io/2017/09/24/Chrome-DevTools/';
+$('.btn_click_load').click(function() {
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+  $('.btn_click_load').css('display','none');
+});
+$.ajax({
+  url: 'https://disqus.com/next/config.json',
+  timeout: 3000,
+  type: 'GET',
+  success: (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    $('.btn_click_load').css('display','none');
+  })(),
+  error: function() {
+    $('.btn_click_load').css('display','block');
+  }
+});</script><script id="dsq-count-scr" src="//Motco.disqus.com/count.js" async></script></div></div></div></div><div class="pure-u-1 pure-u-md-1-4"><div id="sidebar"><div class="widget"><form action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" class="search-form"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="https://motco.github.io"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Front-End/">Front-End</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/line-height/" style="font-size: 15px;">line-height</a> <a href="/tags/form标签/" style="font-size: 15px;">form标签</a> <a href="/tags/css编写规范/" style="font-size: 15px;">css编写规范</a> <a href="/tags/css引入方式/" style="font-size: 15px;">css引入方式</a> <a href="/tags/css继承/" style="font-size: 15px;">css继承</a> <a href="/tags/行内元素/" style="font-size: 15px;">行内元素</a> <a href="/tags/块级元素/" style="font-size: 15px;">块级元素</a> <a href="/tags/text-align/" style="font-size: 15px;">text-align</a> <a href="/tags/DevTools/" style="font-size: 15px;">DevTools</a> <a href="/tags/inline-bllock/" style="font-size: 15px;">inline-bllock</a> <a href="/tags/元素隐藏/" style="font-size: 15px;">元素隐藏</a> <a href="/tags/选择器/" style="font-size: 15px;">选择器</a> <a href="/tags/优先级/" style="font-size: 15px;">优先级</a> <a href="/tags/float/" style="font-size: 15px;">float</a> <a href="/tags/css定位/" style="font-size: 15px;">css定位</a> <a href="/tags/BFC/" style="font-size: 15px;">BFC</a> <a href="/tags/外边距合并/" style="font-size: 15px;">外边距合并</a> <a href="/tags/css-hack/" style="font-size: 15px;">css-hack</a> <a href="/tags/css-tools/" style="font-size: 15px;">css-tools</a> <a href="/tags/学习资源/" style="font-size: 15px;">学习资源</a> <a href="/tags/cmd/" style="font-size: 15px;">cmd</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/10/23/浏览器兼容/">浏览器兼容</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/23/CSS浮动与定位/">CSS 浮动与定位</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/23/CSS常见样式2/">CSS 常见样式（二）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/23/CSS常见样式1/">CSS 常见样式（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/23/CSS编写规范/">CSS 编写规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/24/IT学习资源/">IT学习资源</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/24/Linux-command/">Linux command</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/24/form标签/">form 标签</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/24/CSS选择器/">CSS 选择器</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/24/CSS基础/">CSS 基础</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-comment-o"> 最近评论</i></div><script type="text/javascript" src="//Motco.disqus.com/recent_comments_widget.js?num_items=5&amp;hide_avatars=1&amp;avatar_size=32&amp;excerpt_length=20&amp;hide_mods=1"></script></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2017 <a href="/." rel="nofollow">Motco.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
