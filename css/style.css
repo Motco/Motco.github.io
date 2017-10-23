@@ -120,9 +120,9 @@ div {
     #sidebar .widget .tagcloud {
       margin-top: 10px;
       text-align: center; }
-      #sidebar .widget .tagcloud a {
+/*      #sidebar .widget .tagcloud a {
         line-height: 1.5;
-        padding: 5px; }
+        padding: 5px; }*/
         #sidebar .widget .tagcloud>a {
             display: inline-block;
             line-height: 1;
@@ -130,8 +130,7 @@ div {
             padding: 2px 4px !important;
             white-space: nowrap;
             background-color: #f3f3f3;
-            border-radius: 8px;
-        }
+            border-radius: 8px; }
     #sidebar .widget ul {
       list-style: none;
       padding: 0; }
