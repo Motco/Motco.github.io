@@ -118,17 +118,19 @@ div {
       display: block;
       font-weight: normal; }
     #sidebar .widget .tagcloud {
-      margin-top: 10px; }
+      margin-top: 10px;
+      text-align: center; }
 /*      #sidebar .widget .tagcloud a {
         line-height: 1.5;
         padding: 5px; }*/
         #sidebar .widget .tagcloud>a {
           line-height: 1;
           display: inline-block;
-          padding: 2px 2px !important;
-          margin: 4px 4px !important;
-          border: 1px solid #f1f1f1;
+          padding: 2px 4px !important;
+          margin: 4px 3px !important;
+          border: 1px solid #e8e8e8;
           border-radius: 6px;
+          font-size: 14px !important;
         }
     #sidebar .widget ul {
       list-style: none;
@@ -159,7 +161,8 @@ div {
         border-radius: 5px;
         -webkit-box-shadow: none;
         -moz-box-shadow: none;
-        box-shadow: none; }
+        box-shadow: none;
+        outline: none; }
 
 /* title for search result or tagged posts*/
 .label-title {
