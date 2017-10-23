@@ -151,8 +151,7 @@ div {
         border-radius: 5px;
         -webkit-box-shadow: none;
         -moz-box-shadow: none;
-        box-shadow: none;
-        outline-color: white !important; }
+        box-shadow: none; }
 
 /* title for search result or tagged posts*/
 .label-title {
