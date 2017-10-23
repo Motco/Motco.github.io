@@ -126,11 +126,12 @@ div {
         #sidebar .widget .tagcloud>a {
             display: inline-block;
             line-height: 1;
-            margin: 3px 4px;
-            padding: 2px 4px !important;
+            margin: 2px 2px;
+            padding: 4px 4px !important;
             white-space: nowrap;
-            background-color: #f3f3f3;
-            border-radius: 8px; }
+            border: 1px solid #f0f0f0;
+            border-radius: 6px;
+            font-size: 14px !important; }
     #sidebar .widget ul {
       list-style: none;
       padding: 0; }
