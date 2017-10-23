@@ -118,20 +118,10 @@ div {
       display: block;
       font-weight: normal; }
     #sidebar .widget .tagcloud {
-      margin-top: 10px;
-      text-align: center; }
-/*      #sidebar .widget .tagcloud a {
+      margin-top: 10px; }
+      #sidebar .widget .tagcloud a {
         line-height: 1.5;
-        padding: 5px; }*/
-        #sidebar .widget .tagcloud>a {
-            display: inline-block;
-            line-height: 1;
-            margin: 2px 2px;
-            padding: 4px 4px !important;
-            white-space: nowrap;
-            border: 1px solid #f0f0f0;
-            border-radius: 6px;
-            font-size: 14px !important; }
+        padding: 5px; }
     #sidebar .widget ul {
       list-style: none;
       padding: 0; }
