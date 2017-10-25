@@ -17,6 +17,10 @@ html, button, input, select, textarea,
   /* Set your content font stack here: */
   font-family: "PingFangSC-Regular", Helvetica, "Helvetica Neue", "Segoe UI", "Hiragino Sans GB", "Source Han Sans CN", "Microsoft YaHei", "STHeiti", "WenQuanYi Micro Hei", sans-serif !important; }
 
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 !important;
+  padding: 0 !important; }
+
 body {
   background-color: #FFF;
   color: #444;
@@ -31,7 +35,7 @@ body {
   margin: 0 auto; }
 
 .content_container {
-  padding-right: 50px;
+  padding-right: 20px;
   padding-top: 20px; }
 
 a, button.submit {
@@ -42,8 +46,8 @@ a, button.submit {
   -o-transition: all .1s ease-in;
   transition: all .1s ease-in; }
 
-a:hover, a:active {
-  color: #444; }
+a:hover {
+  color: #D26911; }
 
 a:focus {
   outline: auto; }
@@ -159,7 +163,8 @@ div {
         border-radius: 5px;
         -webkit-box-shadow: none;
         -moz-box-shadow: none;
-        box-shadow: none; }
+        box-shadow: none;
+        outline: none; }
 
 /* title for search result or tagged posts*/
 .label-title {
@@ -168,13 +173,30 @@ div {
   font-weight: normal;
   color: #888; }
 
+.post:before {
+  content: '';
+  display: block;
+  margin: -35px 0 40px;
+  width: 88%;
+  border-bottom: 1px solid #eee; }
+
+.post:first-child:before {
+  display: none; }
+
+.post:last-of-type:after {
+  border-bottom: 1px solid #eee;
+  display: block;
+  width: 88%;
+  content: '';
+  padding-top: 5px; }
+
 .post {
   padding: 25px 0 15px; }
   .post .post-title {
     margin: 0;
     color: #555;
     text-align: left;
-    font: bold 25px/1.1 "ff-tisa-web-pro", Cambria, "Times New Roman", Georgia, Times, sans-serif; }
+    font: bold 20px/1.1 "ff-tisa-web-pro", Cambria, "Times New Roman", Georgia, Times, sans-serif; }
     .post .post-title a {
       color: #555; }
   .post .post-meta {
@@ -225,8 +247,8 @@ div {
   .post .post-content {
     clear: left;
     font-size: 15px;
-    line-height: 1.77;
-    color: #444;
+    line-height: 1.5;
+    color: #666;
     padding-top: 15px;
     text-align: justify;
     text-justify: distribute;
@@ -295,7 +317,7 @@ div {
         padding-right: 0.3em; }
 
 .page-navigator {
-  border-top: 1px solid #ddd;
+  /*    border-top: 1px solid #ddd; */
   list-style: none;
   margin-top: 25px;
   padding: 25px 0 0;
@@ -312,8 +334,8 @@ div {
     border: 1px solid #DDD;
     text-align: center; }
     .page-navigator a:hover, .page-navigator span:hover {
-      background: #F8F8F8;
-      border-bottom-color: #D26911; }
+      color: #D26911;
+      border-color: #D26911; }
     .page-navigator a.prev, .page-navigator span.prev {
       float: left; }
       .page-navigator a.prev:before, .page-navigator span.prev:before {
@@ -739,18 +761,20 @@ pre {
 .readmore a {
   font-size: 14px;
   color: #444;
-  margin: -10px 0;
-  padding: 5px 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+  width: 12%;
+  padding: 0 0 5px 10px;
+  margin: 0 -10px;
+  border-left: 1px solid #DDD;
+  border-bottom: 1px solid #DDD;
+  border-radius: 0 0 0 5px;
   float: right; }
   .readmore a:after {
     font-family: "FontAwesome";
     content: "\f101";
     padding-left: 0.3em; }
   .readmore a:hover {
-    background: #F8F8F8;
-    border-bottom-color: #D26911; }
+    color: #D26911;
+    border-color: #D26911; }
 
 /* syntax highlight*/
 figure.highlight,
